@@ -28,9 +28,6 @@ objects:
       strategy:
         type: Docker
         dockerStrategy:
-          from:
-            kind: DockerImage
-            name: ${BASE_IMAGE_FOR_BUILD}
           dockerfilePath: ${DOCKER_FILE_PATH}
       output:
         to:
@@ -67,8 +64,3 @@ parameters:
     description: The tag given to the built image.
     required: true
     value: latest
-  - name: BASE_IMAGE_FOR_BUILD
-    displayName: FROM Image Tag
-    description: Base image to build from.  Docker creds or Artificatory setup may be needed to alleviate docker rate-limiting
-    required: true
-    value: quay.io/fedora/postgresql-14:14
